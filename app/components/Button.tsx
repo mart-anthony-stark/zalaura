@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 type ButtonProps = {
-    name: string
+    children: ReactNode;
+    className?: string;
+    onClick: ()=>void;
 }
 
-const Button = ({ name }: ButtonProps) => {
+const Button = ({ children, className,...props }: ButtonProps) => {
   return (
-    <div>{name}</div>
+    <button {...props} className={`cursor-pointer select-none bg-black p-2 text-white m-auto w-fit ${className}`}>{children}</button>
   )
 }
 
