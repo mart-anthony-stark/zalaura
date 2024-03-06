@@ -25,7 +25,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="hidden lg:flex gap-8 mt-3">
-        {links.map(link => <Link href={`/products?category=${link}`} className="uppercase">{link}</Link>)}
+        {links.map(link => <Link key={link} href={`/products?category=${link}`} className="uppercase">{link}</Link>)}
       </div>
       
     </div>
