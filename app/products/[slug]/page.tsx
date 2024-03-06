@@ -2,7 +2,6 @@
 
 import { products } from "../../lib/data";
 import { redirect, useRouter } from "next/navigation";
-import Card from "@/app/components/Card";
 import Button from "@/app/components/Button";
 import Image from "next/image";
 import { applyDiscount, pesoFormatter, toNumber } from "@/app/lib/priceHelper";
