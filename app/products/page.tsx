@@ -1,11 +1,10 @@
 import Cards from "../components/Cards";
+import { products } from "../lib/data";
 
 const Products = () => {
   return (
     <>
-    <div className="bg-gray-200 min-h-screen">
-      <Cards />
-    </div>
+      <Cards items={products}/>
     </>
   );
 };

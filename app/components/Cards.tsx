@@ -1,29 +1,31 @@
-"use client"
+"use client";
 
-import React from 'react'
-import { products } from '../lib/data'
-import Card from './Card'
-import { useRouter } from 'next/navigation'
+import React from "react";
+import Card from "./Card";
+import { Product } from "../lib/data";
 
-const Cards = () => {
-  const router = useRouter()
+type CardsProps = {
+  items: Product[];
+};
+
+const Cards = ({ items }: CardsProps) => {
   return (
-    <div className="flex gap-2 justify-center p-2">
-        {products.map((product) => (
-          <Card
-            key={product.id}
-            name={product.name}
-            brand={product.brand}
-            description={product.description}
-            image={product.image}
-            price={product.price}
-            rate={product.rate}
-            slug={product.slug}
-            onClick={()=> router.push(`/products/${product.slug}`)}
-          />
-        ))}
-      </div>
-  )
-}
+    <div className="h-screen flex flex-wrap gap-2 justify-center items-center p-2">
+      {items.map((item) => (
+        <Card
+          key={item.id}
+          name={item.name}
+          brand={item.brand}
+          description={item.description}
+          image={item.image}
+          price={item.price}
+          rate={item.rate}
+          slug={item.slug}
+          discount={item.discount}
+        />
+      ))}
+    </div>
+  );
+};
 
-export default Cards
+export default Cards;
