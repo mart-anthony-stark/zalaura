@@ -89,7 +89,7 @@ const Card = ({
 
       <div className="m-2 flex justify-center">
         {count === 0 ? (
-          <Button className="w-full" onClick={() => handleCartItem("add")}>Add to Cart</Button>
+          <Button className="rounded-md" onClick={() => handleCartItem("add")}>Add to Cart</Button>
         ) : (
           <div className="flex items-center gap-4">
             <Button
